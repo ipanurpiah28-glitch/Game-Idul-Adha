@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petualangan Kuis Kurban Ceria - Edisi Offline Smartboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- MASTER GAME WRAPPER -->
+  <div id="game-container">
+    
+    <!-- TOP HEADER -->
+    <header class="game-header">
+      <div class="logo-area">
+        <span class="icon">🕋</span>
+        <div>
+          <h1>Petualangan Kuis Kurban Ceria</h1>
+          <p>Edisi Offline Smartboard Sekolah (HTML5)</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button id="toggle-sound-btn" class="ctrl-btn" title="Aktifkan/Matikan Suara">🔊 Efek</button>
+        <button id="toggle-music-btn" class="ctrl-btn" title="Aktifkan/Matikan Musik Latar">🎵 Musik</button>
+        <button id="toggle-fullscreen-btn" class="ctrl-btn" title="Layar Penuh">🖥️ Layar Penuh</button>
+      </div>
+    </header>
+
+    <!-- MAIN DISPLAY SCREEN SCREEN -->
+    <main id="main-display">
+
+      <!-- SCREEN 1: WELCOME SCREEN -->
+      <section id="screen-welcome" class="screen active">
+        <div class="welcome-content">
+          <div class="mascot-container">
+            <div class="mascot-badge">🎁 Berbagi Berkah</div>
+            <div class="mascot-goat">🐑</div>
+            <div class="mascot-cow">🐂</div>
+          </div>
+          <span class="welcome-tag text-emerald">🎉 Edisi Spesial Idul Adha &amp; Kurban</span>
+          <h2 class="welcome-title">Petualangan <br><span class="highlight">Kuis Kurban Ceria</span></h2>
+          <p class="welcome-desc">Sekolah Dasar Kelas 1 - 6</p>
+          <p class="welcome-sub">Ayo bermain kuis edukasi seru bertema ibadah kurban secara bersama-sama dalam satu layar datar interaktif flat panel (smartboard)!</p>
+          
+          <button id="start-setup-btn" class="btn btn-primary animate-pulse">MULAI PETUALANGAN SERU 🚀</button>
+          
+          <div class="feature-pills">
+            <span class="pill">⚡ 60 Soal Level 1-6</span>
+            <span class="pill">👥 2-4 Split-screen</span>
+            <span class="pill">📱 Bebas Internet &amp; Offline</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: GAME SETUP SCREEN -->
+      <section id="screen-setup" class="screen">
+        <div class="setup-form">
+          <h3>Pengaturan Permainan Kuis</h3>
+          <p class="setup-sub">Atur tingkat kelas dan jumlah pemain di bawah ini:</p>
+
+          <div class="form-row">
+            <h4 class="form-label">1. Pilih Tingkat Kelas / Level Soal:</h4>
+            <div class="grid-levels">
+              <button class="level-btn active" data-level="1">
+                <span class="lbl">Kelas</span>
+                <span class="num">1</span>
+                <span class="dif">Mudah</span>
+              </button>
+              <button class="level-btn" data-level="2">
+                <span class="lbl">Kelas</span>
+                <span class="num">2</span>
+                <span class="dif">Mudah</span>
+              </button>
+              <button class="level-btn" data-level="3">
+                <span class="lbl">Kelas</span>
+                <span class="num">3</span>
+                <span class="dif">Sedang</span>
+              </button>
+              <button class="level-btn" data-level="4">
+                <span class="lbl">Kelas</span>
+                <span class="num">4</span>
+                <span class="dif">Sedang</span>
+              </button>
+              <button class="level-btn" data-level="5">
+                <span class="lbl">Kelas</span>
+                <span class="num">5</span>
+                <span class="dif">Menantang</span>
+              </button>
+              <button class="level-btn" data-level="6">
+                <span class="lbl">Kelas</span>
+                <span class="num">6</span>
+                <span class="dif">Menantang</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <h4 class="form-label">2. Pilih Jumlah Pemain (Split-Screen):</h4>
+            <div class="grid-modes">
+              <button class="mode-btn active" data-players="1">👤 Mandiri (1 Orang)</button>
+              <button class="mode-btn" data-players="2">👥 2 Pemain</button>
+              <button class="mode-btn" data-players="3">👥 3 Pemain</button>
+              <button class="mode-btn" data-players="4">👥 4 Pemain</button>
+            </div>
+          </div>
+
+          <div class="form-row" id="sync-mode-selector" style="display-none;">
+            <h4 class="form-label">3. Cara Bermain Split-screen:</h4>
+            <div class="grid-sync">
+              <button class="sync-btn active" data-sync="independent">💡 Kuis Mandiri (Pace Masing-masing)</button>
+              <button class="sync-btn" data-sync="synchronized">🏁 Balapan Seru (Satu Soal Bersama)</button>
+            </div>
+          </div>
+
+          <div class="setup-actions">
+            <button id="back-to-welcome-btn" class="btn btn-secondary">Kembali</button>
+            <button id="confirm-setup-btn" class="btn btn-primary">SIAPKAN KUIS SEKARANG ⭐</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: LITERARY INTRO WINDOW -->
+      <section id="screen-intro" class="screen">
+        <div class="intro-box">
+          <div class="intro-visual">🐑🕌🔥</div>
+          <div class="intro-content">
+            <h4>Sejarah Singkat Kurban</h4>
+            <h5>Ketaatan Nabi Ibrahim &amp; Nabi Ismail a.s.</h5>
+            <p>Ibadah Kurban bermula dari pengorbanan luar biasa Nabi Ibrahim a.s. yang taat menjalankan wahyu perintah Allah SWT untuk mengurbankan putra tercintanya, Nabi Ismail a.s.</p>
+            <p>Melihat ketakwaan dan keikhlasan mutlak keduanya, Allah SWT ridha dan ganti seketika Nabi Ismail a.s. dengan seekor domba gemuk sehat dari surga. Peristiwa luhur ini terus diabadikan setiap Idul Adha!</p>
+          </div>
+          <div class="intro-act">
+            <button id="start-quiz-play" class="btn btn-primary animate-pulse">MULAI MENJAWAB SOAL KUIS 🎯</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: PLAYING ZONE WITH SPLIT VIEWS -->
+      <section id="screen-playing" class="screen">
+        <div id="playing-layout-grid" class="single-player-layout">
+          <!-- Dynamic Panels injected here by JS -->
+        </div>
+      </section>
+
+      <!-- SCREEN 5: SCOREBOARD & WINNERS -->
+      <section id="screen-scoreboard" class="screen">
+        <div class="scoreboard-win animate-scale">
+          <span class="tag bg-amber">🏆 PANGGUNG JUARA KELAS</span>
+          <h2>Kuis Selesai! Selamat Anak Sholih</h2>
+          <p class="summary-text">Anda semua luar biasa telah mengasah pengetahuan seputar rukun dan adab ibadah kurban!</p>
+
+          <div class="standings-box" id="winners-container">
+            <!-- Winners rank injected here -->
+          </div>
+
+          <div class="re-actions">
+            <button id="play-again-btn" class="btn btn-primary">🔄 BERMAIN LAGI / GANTI KELAS</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

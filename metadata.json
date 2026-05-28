@@ -1,0 +1,6 @@
+{
+  "name": "Kuis Kurban Ceria",
+  "description": "Game kuis edukasi kurban interaktif untuk Smartboard, mendukung 2-4 pemain multiplayer split-screen dengan audio Web-Synth offline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
